@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build output
+backend/main
+backend/marketing-platform
+frontend/dist/
+frontend/.vite/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Binary
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Logs
+*.log
+logs/
+
+# Temp
+tmp/
+temp/
+*.tmp
+
+# CodeBuddy
+.codebuddy/
+
+# Test coverage
+coverage/
+
+# Database
+*.db
+*.sqlite

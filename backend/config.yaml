@@ -1,0 +1,65 @@
+# 服务器配置
+server:
+  host: 0.0.0.0
+  port: 8080
+  mode: debug  # debug, release, test
+
+# 数据库配置
+database:
+  host: localhost
+  port: 3306
+  username: root
+  password: admin1234
+  name: marketing
+  charset: utf8mb4
+  max_idle_conns: 10
+  max_open_conns: 100
+  conn_max_lifetime: 3600  # 秒
+
+# JWT配置
+jwt:
+  secret: your-jwt-secret-key-change-in-production
+  expire_hours: 24
+  refresh_expire_hours: 168  # 7天
+
+# 腾讯广告API配置
+tencent_ad:
+  app_id: your_app_id
+  app_secret: your_app_secret
+  redirect_uri: http://localhost:8080/oauth/callback
+  token_refresh_interval: 12  # 小时
+
+# 日志配置
+log:
+  level: info  # debug, info, warn, error
+  filename: logs/app.log
+  max_size: 100  # MB
+  max_backups: 30
+  max_age: 7     # 天
+  compress: true
+
+# 报表任务配置
+report:
+  daily_cron: "0 2 * * *"           # 每天凌晨2点
+  hourly_cron: "0 * * * *"          # 每小时
+  async_threshold: 20000            # 异步导出阈值
+  batch_size: 1000                  # 批量处理大小
+
+# 定时任务调度配置
+scheduler:
+  hourly_report_cron: "10 * * * *"    # 每小时10分采集小时报表 (0:10, 1:10, 2:10...)
+  daily_report_cron: "0 2 * * *"      # 每天凌晨2点采集日报表
+  campaign_cron: "0 * * * *"          # 每小时采集广告系列
+  adgroup_cron: "0 * * * *"           # 每小时采集广告组
+  ad_cron: "0 * * * *"               # 每小时采集广告
+  creative_cron: "0 * * * *"          # 每小时采集广告创意
+  material_cron: "0 * * * *"          # 每小时采集广告素材
+
+# 数据抓取配置
+crawler:
+  max_workers_per_account: 5         # 每个账号最大并发数
+  task_queue_size: 100               # 任务队列大小
+  max_retry: 3                       # 最大重试次数
+  retry_delay: 5                     # 重试延迟（秒）
+  request_timeout: 30                # 请求超时（秒）
+  rate_limit: 10                     # API限流（每秒请求数）
