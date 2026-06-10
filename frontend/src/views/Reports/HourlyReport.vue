@@ -89,7 +89,11 @@ const fetchData = async () => {
     ElMessage.warning('请选择日期')
     return
   }
-  
+  if (!crawlerStore.currentAccount) {
+    ElMessage.warning('请先在左侧菜单选择广告账号')
+    return
+  }
+
   loading.value = true
   try {
     const res = await getHourlyReports({

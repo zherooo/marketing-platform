@@ -171,7 +171,8 @@ const formatNumber = (num: number): string => {
 // 获取趋势数据
 const fetchTrendData = async () => {
   if (!dateRange.value || dateRange.value.length !== 2) return
-  
+  if (!crawlerStore.currentAccount) return
+
   try {
     const res = await getDailyTrend({
       account_id: crawlerStore.currentAccount,

@@ -174,6 +174,7 @@ const pagination = reactive({
 })
 
 const fetchData = async () => {
+  if (!crawlerStore.currentAccount) return
   loading.value = true
   try {
     const res = await getMaterials({
@@ -192,6 +193,7 @@ const fetchData = async () => {
 }
 
 const fetchStats = async () => {
+  if (!crawlerStore.currentAccount) return
   try {
     const res = await getMaterialStats(crawlerStore.currentAccount)
     Object.assign(stats, res.data)

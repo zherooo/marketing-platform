@@ -94,6 +94,10 @@ const fetchData = async () => {
     ElMessage.warning('请选择日期范围')
     return
   }
+  if (!crawlerStore.currentAccount) {
+    ElMessage.warning('请先在左侧菜单选择广告账号')
+    return
+  }
   
   loading.value = true
   try {

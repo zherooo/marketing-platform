@@ -1,9 +1,8 @@
 # 广告数据洞察平台
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
+
 基于腾讯广告 API 的广告数据采集、分析与展示平台。支持多账号 OAuth 授权、定时数据抓取、多维度报表分析与可视化看板。
+
+> 📸 项目截图请查看 [SCREENSHOTS.md](./SCREENSHOTS.md)
 
 ---
 
